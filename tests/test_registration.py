@@ -59,7 +59,7 @@ def test_duplicate_registration(driver):
     driver.find_element(By.LINK_TEXT, "Личный кабинет").click()
     driver.find_element(By.LINK_TEXT, "Регистрация").click()
     
-    existing_email = "renat.yushvaev@mail.ru"  
+    existing_email = "rezmeritsaea22@st.ithub.ru"  
     
     driver.find_element(By.ID, "input-firstname").send_keys("renat")
     driver.find_element(By.ID, "input-lastname").send_keys("yushvaev")
@@ -77,4 +77,5 @@ def test_duplicate_registration(driver):
     expected_error = "Данный E-Mail уже зарегистрирован!"
     actual_error = error_message.text.strip()
     
+
     assert expected_error in actual_error, f"Ожидалось: '{expected_error}', Получено: '{actual_error}'"
