@@ -16,8 +16,8 @@ def test_successful_login(driver):
     driver.find_element(By.LINK_TEXT, "Личный кабинет").click()
     driver.find_element(By.LINK_TEXT, "Авторизация").click()
     
-    email = "renat.yushvaev@mail.ru"
-    password = "renat220806!!"
+    email = "egor@mail.ru"
+    password = "egor290307!!"
     
     driver.find_element(By.ID, "input-email").send_keys(email)
     driver.find_element(By.ID, "input-password").send_keys(password)
@@ -43,4 +43,5 @@ def test_invalid_login(driver):
     
     wait = WebDriverWait(driver, 10)
     error_message = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.alert.alert-danger")))
+
     assert "Неправильно заполнены поле E-Mail и/или пароль!" in error_message.text, "Сообщение об ошибке не отображено"
