@@ -34,10 +34,9 @@ def test_search_no_results(driver):
     
     wait = WebDriverWait(driver, 10)
     
-    # Ждем загрузки страницы с результатами поиска
     wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
     
-    # Ищем сообщение об отсутствии результатов
     no_results_message = wait.until(EC.presence_of_element_located((By.XPATH, "//p[contains(text(), 'Нет товаров')]")))
     
+
     assert "Нет товаров, которые соответствуют критериям поиска." in no_results_message.text, "Сообщение об отсутствии результатов не отображено"
