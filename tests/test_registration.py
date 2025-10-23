@@ -19,12 +19,12 @@ def test_successful_registration(driver):
     
     unique_email = f"ffart0609{uuid.uuid4().hex[:10]}@mail.ru"
     
-    driver.find_element(By.ID, "input-firstname").send_keys("renat")
-    driver.find_element(By.ID, "input-lastname").send_keys("yushvaev")
+    driver.find_element(By.ID, "input-firstname").send_keys("egor")
+    driver.find_element(By.ID, "input-lastname").send_keys("rezmerita")
     driver.find_element(By.ID, "input-email").send_keys(unique_email)
-    driver.find_element(By.ID, "input-telephone").send_keys("89166445887")
-    driver.find_element(By.ID, "input-password").send_keys("renat220806!")
-    driver.find_element(By.ID, "input-confirm").send_keys("renat220806!")
+    driver.find_element(By.ID, "input-telephone").send_keys("89979979797")
+    driver.find_element(By.ID, "input-password").send_keys("egor290307!")
+    driver.find_element(By.ID, "input-confirm").send_keys("egor290307!")
     driver.find_element(By.NAME, "agree").click()
     driver.find_element(By.CSS_SELECTOR, "input.btn.btn-primary").click()
     
@@ -79,4 +79,5 @@ def test_duplicate_registration(driver):
     
 
     assert expected_error in actual_error, f"Ожидалось: '{expected_error}', Получено: '{actual_error}'"
+
 
